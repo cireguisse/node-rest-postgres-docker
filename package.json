@@ -1,0 +1,43 @@
+{
+  "name": "api-node-postgresql",
+  "version": "1.0.0",
+  "description": "Api Nodejs pour se connecter avec JWT Authentification  et PostgreSQL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/professionnels/api-node-postgresql.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "jwt",
+    "auth",
+    "postgresql"
+  ],
+  "author": "Guisse DevOps",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/professionnels/api-node-postgresql/issues"
+  },
+  "homepage": "https://gitlab.com/professionnels/api-node-postgresql#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^14.2.0",
+    "env": "0.0.2",
+    "express": "^4.17.2",
+    "http": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.13.0",
+    "uuid": "^8.3.2"
+  }
+}
