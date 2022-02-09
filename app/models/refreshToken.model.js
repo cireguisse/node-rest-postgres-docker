@@ -1,13 +1,13 @@
 const config = require("../config/auth.config");
-const { v4: uuidv4 } = require("uuid");
+const uuid = require('uuid');
 
 module.exports = (sequelize, Sequelize) => {
   const RefreshToken = sequelize.define("refreshToken", {
-    token: {
-      type: Sequelize.STRING,
+    token_id: {
+      type: Sequelize.STRING
     },
     expiryDate: {
-      type: Sequelize.DATE,
+      type: Sequelize.DATE
     },
   });
 
@@ -16,10 +16,8 @@ module.exports = (sequelize, Sequelize) => {
 
     expiredAt.setSeconds(expiredAt.getSeconds() + config.jwtRefreshExpiration);
 
-    let _token = uuidv4();
-
     let refreshToken = await this.create({
-      token: _token,
+      token_id: uuid.v4(),
       userId: user.id,
       expiryDate: expiredAt.getTime(),
     });

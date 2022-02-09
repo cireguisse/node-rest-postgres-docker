@@ -1,18 +1,23 @@
 const config = require("../config/db.config.js");
 
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(process.env.POSTGRES_BD, process.env.POSTGRES_USER, process.env.POSTGRES_PASSWORD, {
-  host: process.env.POSTGRES_HOST,
-  dialect: process.env.POSTGRES_DIALECT,
-  operatorsAliases: false,
+const sequelize = new Sequelize(
+  config.DB,
+  config.USER,
+  config.PASSWORD,
+  {
+    host: config.HOST,
+    dialect: config.dialect,
+    operatorsAliases: false,
 
-  pool: {
-    max: process.env.POOL_MAX,
-    min: process.env.POOL_MIN,
-    acquire: process.env.POOL_ACQUIRE,
-    idle: process.env.POOL_IDLE,
-  },
-});
+    pool: {
+      max: config.pool.max,
+      min: config.pool.min,
+      acquire: config.pool.acquire,
+      idle: config.pool.idle
+    }
+  }
+);
 
 const db = {};
 

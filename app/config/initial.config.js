@@ -1,4 +1,4 @@
-const db = require('../models')
+const db = require('../models/index')
 const Role = db.role;
 
 function initial(){
@@ -16,4 +16,8 @@ function initial(){
         id: 3,
         name: "admin"
     });
+}
+
+module.exports = {
+    initial
 }
